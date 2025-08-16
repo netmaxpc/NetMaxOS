@@ -1,23 +1,35 @@
 <svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="letterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#F8F9FA;stop-opacity:1" />
-      <stop offset="30%" style="stop-color:#E9ECEF;stop-opacity:1" />
-      <stop offset="70%" style="stop-color:#ADB5BD;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#6C757D;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="shadowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#495057;stop-opacity:0.8" />
-      <stop offset="100%" style="stop-color:#212529;stop-opacity:0.9" />
-    </linearGradient>
-    <filter id="letterShadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
-      <feOffset dx="3" dy="3" result="offset"/>
-      <feFlood flood-color="#000000" flood-opacity="0.4"/>
-      <feComposite in2="offset" operator="in"/>
-      <feMerge>
+    <style>
+      .logo-text {
+        font-family: 'Times New Roman', 'Times', serif;
+        font-weight: bold;
+        font-size: 48px;
+        fill: #2a2a2a;
+        text-anchor: middle;
+        dominant-baseline: central;
+        letter-spacing: -2px;
+      }
+      .logo-shadow {
+        font-family: 'Times New Roman', 'Times', serif;
+        font-weight: bold;
+        font-size: 48px;
+        fill: #666;
+        text-anchor: middle;
+        dominant-baseline: central;
+        letter-spacing: -2px;
+        opacity: 0.4;
+      }
+    </style>
+    <filter id="text-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="2" dy="2" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
         <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="SourceGraphic"/> 
       </feMerge>
     </filter>
   </defs>
@@ -25,29 +37,24 @@
   <!-- Background -->
   <rect width="128" height="128" fill="transparent"/>
   
-  <!-- Shadow letters (offset) -->
-  <g transform="translate(3,3)" fill="url(#shadowGradient)" opacity="0.6">
-    <!-- N shadow -->
-    <path d="M 15 25 L 15 75 L 20 75 L 20 35 L 35 75 L 40 75 L 40 25 L 35 25 L 35 65 L 20 25 Z"/>
-    <!-- M shadow -->
-    <path d="M 50 25 L 50 75 L 55 75 L 55 35 L 65 65 L 70 65 L 80 35 L 80 75 L 85 75 L 85 25 L 75 25 L 67.5 55 L 60 25 Z"/>
-  </g>
+  <!-- Shadow text -->
+  <text x="66" y="66" class="logo-shadow">NM</text>
   
-  <!-- Main letters -->
-  <g fill="url(#letterGradient)" filter="url(#letterShadow)">
-    <!-- N -->
-    <path d="M 15 25 L 15 75 L 20 75 L 20 35 L 35 75 L 40 75 L 40 25 L 35 25 L 35 65 L 20 25 Z" stroke="#495057" stroke-width="0.5"/>
-    <!-- M -->
-    <path d="M 50 25 L 50 75 L 55 75 L 55 35 L 65 65 L 70 65 L 80 35 L 80 75 L 85 75 L 85 25 L 75 25 L 67.5 55 L 60 25 Z" stroke="#495057" stroke-width="0.5"/>
-  </g>
+  <!-- Main text with serif styling -->
+  <text x="64" y="64" class="logo-text" filter="url(#text-shadow)">NM</text>
   
-  <!-- Highlight accents -->
-  <g fill="#FFFFFF" opacity="0.3">
-    <!-- N highlight -->
-    <path d="M 16 26 L 16 30 L 19 30 L 19 26 Z"/>
-    <path d="M 36 26 L 36 30 L 39 30 L 39 26 Z"/>
-    <!-- M highlight -->
-    <path d="M 51 26 L 51 30 L 54 30 L 54 26 Z"/>
-    <path d="M 81 26 L 81 30 L 84 30 L 84 26 Z"/>
+  <!-- Additional serif details for authenticity -->
+  <g fill="#2a2a2a" opacity="0.8">
+    <!-- N serifs -->
+    <rect x="28" y="42" width="3" height="2" rx="0.5"/>
+    <rect x="28" y="84" width="3" height="2" rx="0.5"/>
+    <rect x="45" y="42" width="3" height="2" rx="0.5"/>
+    <rect x="45" y="84" width="3" height="2" rx="0.5"/>
+    
+    <!-- M serifs -->
+    <rect x="72" y="42" width="3" height="2" rx="0.5"/>
+    <rect x="72" y="84" width="3" height="2" rx="0.5"/>
+    <rect x="95" y="42" width="3" height="2" rx="0.5"/>
+    <rect x="95" y="84" width="3" height="2" rx="0.5"/>
   </g>
 </svg>
