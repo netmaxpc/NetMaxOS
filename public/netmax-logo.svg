@@ -1,19 +1,19 @@
 <svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#E5E7EB;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#9CA3AF;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#6B7280;stop-opacity:1" />
+    <linearGradient id="letterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8F9FA;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#E9ECEF;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#ADB5BD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6C757D;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="redAccent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#DC2626;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#B91C1C;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#991B1B;stop-opacity:1" />
+    <linearGradient id="shadowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#495057;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#212529;stop-opacity:0.9" />
     </linearGradient>
-    <filter id="emboss">
+    <filter id="letterShadow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
-      <feOffset dx="2" dy="2" result="offset"/>
-      <feFlood flood-color="#000000" flood-opacity="0.3"/>
+      <feOffset dx="3" dy="3" result="offset"/>
+      <feFlood flood-color="#000000" flood-opacity="0.4"/>
       <feComposite in2="offset" operator="in"/>
       <feMerge>
         <feMergeNode/>
@@ -22,18 +22,32 @@
     </filter>
   </defs>
   
-  <!-- Background circle -->
-  <circle cx="64" cy="64" r="60" fill="#1F2937" stroke="url(#metalGradient)" stroke-width="2"/>
+  <!-- Background -->
+  <rect width="128" height="128" fill="transparent"/>
   
-  <!-- Main N letter -->
-  <text x="64" y="85" font-family="Arial, sans-serif" font-size="64" font-weight="bold" text-anchor="middle" fill="url(#metalGradient)" filter="url(#emboss)">N</text>
+  <!-- Shadow letters (offset) -->
+  <g transform="translate(3,3)" fill="url(#shadowGradient)" opacity="0.6">
+    <!-- N shadow -->
+    <path d="M 15 25 L 15 75 L 20 75 L 20 35 L 35 75 L 40 75 L 40 25 L 35 25 L 35 65 L 20 25 Z"/>
+    <!-- M shadow -->
+    <path d="M 50 25 L 50 75 L 55 75 L 55 35 L 65 65 L 70 65 L 80 35 L 80 75 L 85 75 L 85 25 L 75 25 L 67.5 55 L 60 25 Z"/>
+  </g>
   
-  <!-- Red accent line -->
-  <rect x="20" y="60" width="88" height="4" fill="url(#redAccent)" rx="2"/>
+  <!-- Main letters -->
+  <g fill="url(#letterGradient)" filter="url(#letterShadow)">
+    <!-- N -->
+    <path d="M 15 25 L 15 75 L 20 75 L 20 35 L 35 75 L 40 75 L 40 25 L 35 25 L 35 65 L 20 25 Z" stroke="#495057" stroke-width="0.5"/>
+    <!-- M -->
+    <path d="M 50 25 L 50 75 L 55 75 L 55 35 L 65 65 L 70 65 L 80 35 L 80 75 L 85 75 L 85 25 L 75 25 L 67.5 55 L 60 25 Z" stroke="#495057" stroke-width="0.5"/>
+  </g>
   
-  <!-- Small decorative elements -->
-  <circle cx="25" cy="25" r="3" fill="url(#redAccent)"/>
-  <circle cx="103" cy="25" r="3" fill="url(#redAccent)"/>
-  <circle cx="25" cy="103" r="3" fill="url(#redAccent)"/>
-  <circle cx="103" cy="103" r="3" fill="url(#redAccent)"/>
+  <!-- Highlight accents -->
+  <g fill="#FFFFFF" opacity="0.3">
+    <!-- N highlight -->
+    <path d="M 16 26 L 16 30 L 19 30 L 19 26 Z"/>
+    <path d="M 36 26 L 36 30 L 39 30 L 39 26 Z"/>
+    <!-- M highlight -->
+    <path d="M 51 26 L 51 30 L 54 30 L 54 26 Z"/>
+    <path d="M 81 26 L 81 30 L 84 30 L 84 26 Z"/>
+  </g>
 </svg>
