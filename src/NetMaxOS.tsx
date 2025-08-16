@@ -433,7 +433,7 @@ export default function NetMaxOS() {
   if (showSplash) {
     return (
       <div className="w-full h-full flex items-center justify-center bg-black" style={{background: theme.bg}}>
-        <img src="/netmax-logo.svg" alt="NetMax Logo" className="h-32 w-auto animate-pulse" />
+        <img src="/NetMaxPC Transparent symbol.svg" alt="NetMax Logo" className="h-32 w-auto animate-pulse" />
       </div>
     );
   }
@@ -447,7 +447,7 @@ export default function NetMaxOS() {
           style={{ background: `radial-gradient(900px 600px at 50% 40%, ${theme.deepRed}11, transparent 60%), #0a0a0d` }}
           onClick={() => setSplashOpen(false)}
         >
-          <img src="/netmax-logo.svg" alt="NetMaxOS" className="h-28 w-28 object-contain drop-shadow" />
+          <img src="/NetMaxPC Transparent symbol.svg" alt="NetMaxOS" className="h-28 w-28 object-contain drop-shadow" />
           <div className="mt-4 text-gray-200 text-lg tracking-wide">NetMaxOS</div>
           <div className="mt-3 h-1 w-40 rounded bg-white/10 overflow-hidden">
             <div className="h-full w-1/3" style={{ background: theme.deepRed, animation: 'load 1.8s ease-in-out infinite' }} />
@@ -462,7 +462,7 @@ export default function NetMaxOS() {
         className="pointer-events-none select-none absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
-            "url('/netmax-logo.svg'), linear-gradient(transparent, transparent)",
+            "url('/NetMaxPC Transparent symbol.svg'), linear-gradient(transparent, transparent)",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center 34%",
           backgroundSize: "min(48vw, 640px) auto",
@@ -517,7 +517,7 @@ export default function NetMaxOS() {
           >
             <div className="p-4 border-b border-white/10" style={{ backgroundColor: theme.bg }}>
               <div className="flex items-center space-x-3">
-                <img src="/netmax-logo.svg" alt="NetMax" className="w-8 h-8" />
+                <img src="/NetMaxPC Transparent symbol.svg" alt="NetMax" className="w-8 h-8" />
                 <div>
                   <div className="text-sm font-medium" style={{ color: theme.text }}>NetMaxOS</div>
                   <div className="text-xs" style={{ color: theme.textDim }}>AI-Powered Desktop</div>
@@ -556,7 +556,7 @@ export default function NetMaxOS() {
               startOpen ? "bg-white/20" : "hover:bg-white/10"
             )}
           >
-            <img src="/netmax-logo.svg" alt="Start" className="w-5 h-5" />
+            <img src="/NetMaxPC Transparent symbol.svg" alt="Start" className="w-5 h-5" />
             <span className="text-sm font-medium" style={{ color: theme.text }}>NetMax</span>
           </button>
 
